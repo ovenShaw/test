@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="page login">
+  	<view class="weui-cell">
+  		<view class="weui-cell__hd">手机号码：</view>
+  		<view class="weui-cell__bd">
+  			<input type="number" bindinput="userNameInput" placeholder="请输入手机号码" />
+  		</view>
+  	</view>
+  	<view class="weui-cell">
+  		<view class="weui-cell__hd">　　密码：</view>
+  		<view class="weui-cell__bd">
+  			<input type="password" bindinput="passWdInput" placeholder="密码" />
+  		</view>
+  	</view>
+  	<view class="weui-cell" wx:if="{{reg}}">
+  		<view class="weui-cell__hd">确认密码：</view>
+  		<view class="weui-cell__bd">
+  			<input type="password" bindinput="passWdRepeatInput" placeholder="请再次输入密码" />
+  		</view>
+  	</view>
+  	<view class="weui-cell big_btn">
+  		<view class="weui-cell__bd">
+        <button type="primary" wx:if="{{!reg}}" bindtap="login">登录</button>
+        <button type="primary" wx:if="{{reg}}" bindtap="register">注册</button>
+  			<text bindtap="bindReg">{{reg == true ? '有账号，直接登录' : '新用户注册'}}</text>
+  		</view>
+  	</view>
+</view>
